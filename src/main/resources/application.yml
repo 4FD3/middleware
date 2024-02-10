@@ -1,0 +1,13 @@
+logging:
+  level:
+    org:
+      springframework:
+        security: ERROR
+spring:
+  server:
+    port: 8080
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
