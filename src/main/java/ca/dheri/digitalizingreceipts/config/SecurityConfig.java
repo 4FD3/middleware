@@ -38,7 +38,7 @@ class SecurityConfig {
                 .sessionManagement((sessionManagement) -> sessionManagement
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 )
-                .logout((l -> l.logoutSuccessUrl("/").permitAll()));
+                .logout((l -> l.logoutSuccessUrl("/api/").permitAll()));
 
         return http.build();
     }

@@ -18,5 +18,10 @@ public class ApiController {
         logger.info("api home called");
         return "home";
     }
+    @GetMapping("/test")
+    public String test() {
+        logger.info("api home called");
+        return "home";
+    }
 
 }

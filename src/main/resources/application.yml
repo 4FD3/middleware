@@ -11,6 +11,15 @@ spring:
       client:
         registration:
           google:
+            clientId: redacted
+            clientSecret: redacted
+
+
+  data:
+    mongodb:
+      uri: redacted
+      database: test
+
 ocr:
   url: ocr.ishananand.ca
 
