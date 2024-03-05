@@ -1,4 +1,13 @@
 steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        chmod +x ./gradlew
+        ./gradlew clean assemble -x test --build-cache --quiet
+
+
   # Build the application image using Buildpacks
   - name: 'gcr.io/k8s-skaffold/pack'
     args: ['build', '${_IMAGE_NAME}', '--builder=gcr.io/buildpacks/builder:v1', '--path=.', '--env=BP_GRADLE_BUILD_ARGUMENTS=--no-daemon clean build']
