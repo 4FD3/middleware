@@ -5,9 +5,9 @@ steps:
     entrypoint: 'gradle'
     args: ['build', '--no-daemon']
 
-  # Optionally, if you use Buildpacks to containerize your app, this step should correctly use 'pack' tool
-  - name: 'gcr.io/k8s-skaffold/pack'
-    args: ['build', '${_IMAGE_NAME}', '--builder=gcr.io/buildpacks/builder:v1', '--path=.', '--env=BP_GRADLE_BUILD_ARGUMENTS=--no-daemon clean build --env=GOOGLE_RUNTIME_VERSION=21 --env=BP_JVM_VERSION=21']
+#  # Optionally, if you use Buildpacks to containerize your app, this step should correctly use 'pack' tool
+#  - name: 'gcr.io/k8s-skaffold/pack'
+#    args: ['build', '${_IMAGE_NAME}', '--builder=gcr.io/buildpacks/builder:v1', '--path=.', '--env=BP_GRADLE_BUILD_ARGUMENTS=--no-daemon clean build --env=GOOGLE_RUNTIME_VERSION=21 --env=BP_JVM_VERSION=21']
 
   # Push the built image to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
