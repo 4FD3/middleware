@@ -1,17 +1,13 @@
 steps:
-#  - name: 'gcr.io/cloud-builders/gcloud'
-#    entrypoint: 'bash'
-#    args:
-#      - '-c'
-#      - |
-#        chmod +x ./gradlew
-#        ./gradlew clean assemble -x test --build-cache --quiet
-#
 
   # Build the application image using Buildpacks
   - name: 'gradle'
     entrypoint: 'gradle'
-    args: ['build', '${_IMAGE_NAME}', '--builder=gcr.io/buildpacks/builder:v1', '--path=.', '--env=BP_GRADLE_BUILD_ARGUMENTS=--no-daemon --env=GOOGLE_RUNTIME_VERSION=21 --env=BP_JVM_VERSION=21 clean build']
+    args: ['build', '--no-daemon']
+
+  # Optionally, if you use Buildpacks to containerize your app, this step should correctly use 'pack' tool
+  - name: 'gcr.io/k8s-skaffold/pack'
+    args: ['build', '${_IMAGE_NAME}', '--builder=gcr.io/buildpacks/builder:v1', '--path=.', '--env=BP_GRADLE_BUILD_ARGUMENTS=--no-daemon clean build --env=GOOGLE_RUNTIME_VERSION=21 --env=BP_JVM_VERSION=21']
 
   # Push the built image to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
@@ -19,11 +15,5 @@ steps:
 options:
   logging: CLOUD_LOGGING_ONLY
 
-
 images:
   - '${_IMAGE_NAME}'
-
-timeout: '1600s'
-
-substitutions:
-  _IMAGE_NAME: 'gcr.io/${PROJECT_ID}/${REPO_NAME}:${SHORT_SHA}'
