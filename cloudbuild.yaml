@@ -15,5 +15,5 @@ steps:
 options:
   logging: CLOUD_LOGGING_ONLY
 
-images:
-  - '${_IMAGE_NAME}'
+substitutions:
+  _IMAGE_NAME: 'gcr.io/${PROJECT_ID}/${REPO_NAME}:${SHORT_SHA}'
