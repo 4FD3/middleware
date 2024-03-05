@@ -25,4 +25,4 @@ images:
 timeout: '1600s'
 
 substitutions:
-  _IMAGE_NAME: 'gcr.io/${REPO_FULL_NAME}:${SHORT_SHA}'
+  _IMAGE_NAME: 'gcr.io/${PROJECT_ID}/${REPO_FULL_NAME}:${SHORT_SHA}'
