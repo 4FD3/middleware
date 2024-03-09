@@ -48,6 +48,8 @@ public class AuthenticationController {
 
     @GetMapping("/api/auth/google")
     public void redirectToGoogle(HttpServletResponse response) throws IOException {
+        logger.info(" /api/auth/google redirectToGoogle");
+
         String oauth2Url = "http://localhost:8080/oauth2/authorization/google";
         response.sendRedirect(oauth2Url);
     }
@@ -57,7 +59,5 @@ public class AuthenticationController {
     }
 
     private void authenticateUserInSpringContext(UserDetails userDetails) {
-        // Create an authentication object using UserDetails
-        // Set the authentication in the SecurityContextHolder
     }
 }

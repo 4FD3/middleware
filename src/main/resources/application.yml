@@ -13,6 +13,8 @@ spring:
           google:
             clientId: redacted
             clientSecret: redacted
+            scope: openid, email, profile
+            redirect-uri: "{baseUrl}/login/oauth2/code/google"
 
 
   data:

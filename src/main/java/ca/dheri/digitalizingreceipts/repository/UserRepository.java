@@ -1,5 +1,6 @@
-package ca.dheri.digitalizingreceipts.model;
+package ca.dheri.digitalizingreceipts.repository;
 
+import ca.dheri.digitalizingreceipts.model.DigReceiptUser;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

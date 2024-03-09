@@ -3,14 +3,11 @@ package ca.dheri.digitalizingreceipts.service;
 
 import ca.dheri.digitalizingreceipts.model.DigReceiptUser;
 import ca.dheri.digitalizingreceipts.model.Receipt;
-import ca.dheri.digitalizingreceipts.model.UserRepository;
+import ca.dheri.digitalizingreceipts.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
