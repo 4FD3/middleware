@@ -10,7 +10,6 @@ import org.springframework.security.authentication.event.AbstractAuthenticationF
 import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -33,6 +32,7 @@ public class AuthenticationEvents {
         String lName = oidcUser.getFullName();
 
         DigReceiptUser user = new DigReceiptUser(googleId, name, fName, lName, email);
+        logger.debug(user.toString());
         userService.saveUser(user);
 
 

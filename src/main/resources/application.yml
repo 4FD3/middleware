@@ -1,9 +1,21 @@
+
 logging:
   level:
+
+    ca:
+      dheri: DEBUG
     org:
       springframework:
+        web:
+          reactive:
+            function:
+              client: DEBUG
         security: ERROR
 spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 11MB
   server:
     port: 8080
   security:
@@ -23,5 +35,5 @@ spring:
       database: test
 
 ocr:
-  url: ocr.ishananand.ca
+  host: ocr.ishananand.ca
 

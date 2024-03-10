@@ -1,7 +1,6 @@
 package ca.dheri.digitalizingreceipts.service;
 
 import ca.dheri.digitalizingreceipts.config.GoogleClientConfig;
-import ca.dheri.digitalizingreceipts.controller.ApiController;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.javanet.NetHttpTransport;

@@ -13,8 +13,8 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    Logger logger = LoggerFactory.getLogger(UserService.class);
     private final UserRepository userRepository;
+    Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -24,6 +24,7 @@ public class UserService {
         Optional<DigReceiptUser> existingUser = userRepository.findByGoogleId(user.getGoogleId());
         return existingUser.orElseGet(() -> userRepository.save(user));
     }
+
     public DigReceiptUser addReceiptToUser(String userId, Receipt receipt) {
         Optional<DigReceiptUser> userOptional = userRepository.findByGoogleId(userId);
         if (userOptional.isPresent()) {

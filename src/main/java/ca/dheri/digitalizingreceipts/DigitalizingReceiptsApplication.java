@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DigitalizingReceiptsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DigitalizingReceiptsApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DigitalizingReceiptsApplication.class, args);
+    }
 
 }

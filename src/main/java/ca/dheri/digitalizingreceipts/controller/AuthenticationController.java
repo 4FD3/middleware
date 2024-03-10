@@ -1,4 +1,5 @@
 package ca.dheri.digitalizingreceipts.controller;
+
 import ca.dheri.digitalizingreceipts.service.GoogleTokenVerifier;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
@@ -23,6 +24,7 @@ public class AuthenticationController {
 
     @Autowired
     GoogleTokenVerifier googleTokenVerifier;
+
     @PostMapping("/api/auth/google")
     public ResponseEntity<?> authenticateUser(@RequestBody Map<String, String> tokenPayload) {
 

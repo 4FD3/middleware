@@ -25,6 +25,7 @@ dependencies {
 	implementation 'com.google.api-client:google-api-client:1.32.1'
 	implementation 'com.google.http-client:google-http-client-jackson2:1.40.1'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
 
 	compileOnly 'org.projectlombok:lombok:1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
